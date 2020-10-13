@@ -36,3 +36,4 @@ npm install -g webpack
 npm install
 ```
 
+# bookings-proxy
