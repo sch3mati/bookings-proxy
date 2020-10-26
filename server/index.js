@@ -1,4 +1,4 @@
-const newrelic = require('newrelic')
+const newrelic = require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -20,7 +20,6 @@ app.listen(port, () => {
 
 app.get('*', (reqProxy, resProxy) => {
   const service = reqProxy.path.split('/')[2];
-  console.log(service, reqProxy.path)
   if (service === 'restaurants') {
     axios.get(`http://localhost:3000${reqProxy.path}`, {
       params: reqProxy.query
