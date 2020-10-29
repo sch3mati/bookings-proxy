@@ -21,7 +21,7 @@ app.listen(port, () => {
 app.get('*', (reqProxy, resProxy) => {
   const service = reqProxy.path.split('/')[2];
   if (service === 'restaurants') {
-    axios.get(`http://localhost:3000${reqProxy.path}`, {
+    axios.get(`http://13.56.249.145${reqProxy.path}`, {
       params: reqProxy.query
     })
       .then((response) => {
@@ -48,7 +48,7 @@ app.get('*', (reqProxy, resProxy) => {
 app.post('*', (reqProxy, resProxy) => {
   const service = reqProxy.path.split('/')[2];
   if (service === 'restaurants') {
-    axios.post(`http://localhost:3000${reqProxy.path}`, reqProxy.body)
+    axios.post(`http://13.56.249.145${reqProxy.path}`, reqProxy.body)
       .then((response) => {
         resProxy.send(response.data);
       });
